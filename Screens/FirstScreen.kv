@@ -1,0 +1,79 @@
+<FirstScreen>:
+    name: "_FirstScreen_"
+
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        MDLabel:
+            text: "W E L C O M E"
+            font_size: "23sp"
+            pos_hint: {"center_y": .9}
+            halign: "center"
+            color: rgba(34, 34, 34, 255)
+
+
+        MDLabel:
+            text: "T O"
+            font_size: "23sp"
+            pos_hint: {"center_y": .8}
+            halign: "center"
+            color: rgba(34, 34, 34, 255)
+
+
+        MDLabel:
+            text: "TRAVEL MANAGEMENT"
+            font_size: "23sp"
+            pos_hint: {"center_y": .7}
+            halign: "center"
+            color: rgba(34, 34, 34, 255)
+
+
+        Image:
+            source:"Images/s.png"
+            size_hint: .8, .8
+            pos_hint: {"center_x": .50, "center_y": .55}
+
+
+        MDLabel:
+            text: "Best place to travel and share your journey experiences!!!"
+            font_size: "16sp"
+            pos_hint: {"center_x": .50, "center_y": .40}
+            halign: "center"
+            color: rgba(34, 34, 34, 255)
+
+
+        Button:
+            text: "LOGIN"
+            size_hint: .66, .065
+            pos_hint: {"center_x": .5, "center_y": .23}
+            background_color: 0, 0, 0, 0
+
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "My"
+
+            canvas.before:
+                Color:
+                    rgb: rgba(243, 190, 78, 1)
+
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius:[5]
+
+        Button:
+            text: "SIGNUP"
+            size_hint: .66, .065
+            pos_hint: {"center_x": .5, "center_y": .09}
+            background_color: 0, 0, 0, 0
+            color: rgba(52, 0, 231, 255)
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "_AdminSignUp_"
+
+            canvas.before:
+                Color:
+                    rgb: rgba(52, 0, 231, 255)
+
+                Line:
+                    width: 1.2
+                    rounded_rectangle: self.x, self.y, self.width, self.height, 5, 5, 5, 5, 100

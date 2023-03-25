@@ -1,0 +1,90 @@
+<A_remove>:
+    name: "_A_remove_"
+
+    MDIconButton:
+        icon: "arrow-left"
+        pos_hint: {"center_y": .95}
+        user_font_size: "30sp"
+        use_text_color: "Custom"
+        text_color: rgba(26, 24, 58, 255)
+        on_release:
+            root.manager.transition.direction = "right"
+            root.manager.current = "_AHomeScreen_"
+
+    MDLabel:
+        text: "Remove Admin account"
+        font_size: "15sp"
+        pos_hint: {"center_x": .6, "center_y": .90}
+        color: rgba(135, 133, 193, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .82}
+        TextInput:
+            id:user2
+            hint_text: "Userame"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    MDFloatLayout:
+        id:email2
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .70}
+        TextInput:
+            hint_text: "Email"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .58}
+        TextInput:
+            hint_text: "Password"
+            id:password2
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+            password: True
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    Button:
+        text: "REMOVE"
+        size_hint: .66, .065
+        pos_hint: {"center_x": .5, "center_y": .30}
+        background_color: 0, 0, 0, 0
+        on_press:
+            root.remove()
+
+        canvas.before:
+            Color:
+                rgb: rgba(255, 165, 0, 0.4)
+
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius:[5]

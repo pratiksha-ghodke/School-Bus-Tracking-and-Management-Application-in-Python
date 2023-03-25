@@ -1,0 +1,82 @@
+<ParentLogin>:
+    name: "_ParentLogin_"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+		MDFloatLayout:
+			size_hint_x: 1
+			size_hint_y: .35
+			pos_hint: {"center_x": .5, "center_y": .85}
+			canvas:
+				Color:
+					rgb:(1, 1, 1, 1)
+				Rectangle:
+					size: self.size
+					pos: self.pos
+					source: "Images/back1.png"
+
+            Image:
+                source:"Images/p_login.jpg"
+                size_hint: 1, 8
+                pos_hint: {"center_x": .5,"center_y": .65}
+
+        MDFloatLayout:
+            MDCard:
+                md_bg_color: 1, 1, 1, 1
+                elevation: 7
+                size_hint: .8, .4
+                pos_hint:{"center_x": .5,"center_y":.48}
+                radius: [5]
+
+            MDFloatLayout:
+                size_hint: .7, .08
+                pos_hint:{"center_x":.5,"center_y":.63}
+                TextInput:
+                    id: p_user
+                    hint_text: "Username"
+                    size_hint_y: .75
+                    pos_hint: {"center_x":.43,"center_y":.5}
+                    background_color: 1, 1, 1, 0
+                    foreground_color: rgba(0, 0, 59, 255)
+                    cursor_color: rgba(0, 0, 59, 255)
+                    font_size: "14sp"
+                    cursor_width: "2sp"
+                    multiline: False
+                MDFloatLayout:
+                    pos_hint: {"center_x":.45,"center_y":0}
+                    size_hint_y: .03
+                    md_bg_color:rgba(178, 178, 178, 255)
+
+            MDFloatLayout:
+                size_hint: .7, .08
+                pos_hint:{"center_x":.5,"center_y":.5}
+                TextInput:
+                    id: p_pass
+                    hint_text: "Password"
+                    size_hint_y: .75
+                    pos_hint: {"center_x":.43,"center_y":.5}
+                    background_color: 1, 1, 1, 0
+                    foreground_color: rgba(0, 0, 59, 255)
+                    cursor_color: rgba(0, 0, 59, 255)
+                    font_size: "14sp"
+                    cursor_width: "2sp"
+                    multiline: False
+                    password: True
+                MDFloatLayout:
+                    pos_hint: {"center_x":.45,"center_y":0}
+                    size_hint_y: .03
+                    md_bg_color:rgba(178, 178, 178, 255)
+
+            Button:
+                text: "LOGIN"
+                size_hint: .66, .065
+                pos_hint: {"center_x": .5,"center_y": .34}
+                background_color: 0, 0, 0, 0
+                canvas.before:
+                    Color:
+                        rgb: rgba(243,190,78,255)
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                on_press:
+                    root.plogin()
+

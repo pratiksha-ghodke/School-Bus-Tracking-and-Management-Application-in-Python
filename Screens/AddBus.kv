@@ -1,0 +1,125 @@
+<AddBus>:
+    name: "_AddBus_"
+    MDIconButton:
+        icon: "arrow-left"
+        pos_hint: {"center_y": .95}
+        user_font_size: "30sp"
+        use_text_color: "Custom"
+        text_color: rgba(26, 24, 58, 255)
+        on_release:
+            root.manager.transition.direction = "right"
+            root.manager.current = "_AHomeScreen_"
+
+    MDLabel:
+        text: "Add new Bus"
+        font_size: "15sp"
+        pos_hint: {"center_x": .6, "center_y": .90}
+        color: rgba(135, 133, 193, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .82}
+        TextInput:
+            id: bus_no
+            hint_text: "Bus Number*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .70}
+        TextInput:
+            id: rute
+            hint_text: "Rute*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .58}
+        TextInput:
+            id:ass_driver
+            hint_text: "Allocated Driver*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .46}
+        TextInput:
+            id: d_con
+            hint_text: "Driver Contact Number*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .34}
+        TextInput:
+            id: d_age
+            hint_text: "Age*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    Button:
+        text: "CREATE"
+        size_hint: .66, .065
+        pos_hint: {"center_x": .5, "center_y": .20}
+        background_color: 0, 0, 0, 0
+
+        canvas.before:
+            Color:
+                rgb: rgba(255, 165, 0, 0.4)
+
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius:[5]
+        on_press:
+            root.add_bus()
+

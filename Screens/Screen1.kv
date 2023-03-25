@@ -1,0 +1,22 @@
+<Screen1>:
+    name: "Screen1"
+    MDScreen:
+        on_enter: self.ids.progress.start()
+        MDFloatLayout:
+            md_bg_color : 243/255, 190/255, 78/255, 1
+            Image:
+                source: "Images/Add a heading.gif"
+                allow_stretch: True
+                anim_delay: 0
+                anim_reset: True
+                pos_hint:{"center_x":.5,"center_y":.5}
+
+        MDTextButton:
+            text:"Start"
+            pos_hint:{"center_x":.5, "center_y":.20}
+            color: rgba(68, 78, 132, 255)
+            font_size:"12sp"
+
+        	on_release:
+        		root.manager.transition.direction = "left"
+        		root.manager.current= "_FirstScreen_"

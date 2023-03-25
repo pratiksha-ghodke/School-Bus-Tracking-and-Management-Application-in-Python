@@ -1,0 +1,727 @@
+<ListItemWithCheckbox1>:
+
+    IconLeftWidget:
+        icon: "account-tie"
+
+<ListItemWithCheckbox2>:
+
+    IconLeftWidget:
+        icon: "school"
+
+<ListItemWithCheckbox3>:
+
+    IconLeftWidget:
+        icon: "bus"
+
+<AHomeScreen>:
+    name:"_AHomeScreen_"
+    BoxLayout:
+        orientation:'vertical'
+        MDBottomNavigation:
+            text_color_normal: 0, 0, 0 , .5
+            text_color_active: 243/255, 190/255, 78/255, 255/255
+
+            MDBottomNavigationItem:
+                name: 'home'
+                id: nav_icon1
+                icon: "home"
+                Image:
+                    source:"Images/map.png"
+                    size_hint: 1, 8
+                    pos_hint: {"center_x": .5,"center_y": .65}
+                BoxLayout:
+                    MDToolbar:
+                        pos_hint: {"center_x": .5, "center_y": .95}
+                        md_bg_color: 243/255, 190/255, 78/255, 255/255
+                        specific_text_color: 1,1,1,1
+                        title: "Home"
+                        use_overflow: True
+                        anchor_title: 'center'
+                        elevation: 10
+
+                MDFloatLayout:
+                    MDCard:
+                        md_bg_color: 1, 1, 1, 1
+                        elevation: 7
+                        size_hint: .8, .2
+                        pos_hint:{"center_x": .50,"center_y":.32}
+                        radius: [10]
+                        MDLabel:
+                            text: "School Location"
+                            font_size: "23sp"
+                            pos_hint: {"center_y": .5}
+                            halign: "center"
+                            color: rgba(34, 34, 34, 255)
+
+                        MDLabel:
+                            text: "ABCD School , N6 CIDCO, Aurangabad"
+                            font_size: "15sp"
+                            pos_hint: {"center_y": .5}
+                            color: rgba(34, 34, 34, 255)
+
+                MDFloatLayout:
+                    MDCard:
+                        md_bg_color: 1, 1, 1, 1
+                        elevation: 7
+                        size_hint: .8, .2
+                        pos_hint:{"center_x": .50,"center_y":.10}
+                        radius: [10]
+                        MDLabel:
+                            text: "School Address"
+                            font_size: "23sp"
+                            pos_hint: {"center_y": .5}
+                            halign: "center"
+                            color: rgba(34, 34, 34, 255)
+
+                        MDLabel:
+                            text: "Jalna Road, Aurangabad"
+                            font_size: "15sp"
+                            pos_hint: {"center_y": .5}
+                            color: rgba(34, 34, 34, 255)
+
+            MDBottomNavigationItem:
+                name: 'bus'
+                id: nav_icon2
+                icon: "bus"
+
+                ScrollView:
+                    pos_hint: {"center_x": .5, "center_y": .400}
+                    MDList:
+                        id: list_three
+
+                BoxLayout:
+                    MDToolbar:
+                        pos_hint: {"center_x": .5, "center_y": .95}
+                        md_bg_color: 243/255, 190/255, 78/255, 255/255
+                        specific_text_color: 1,1,1,1
+                        title: "Buses"
+                        use_overflow: True
+                        anchor_title: 'center'
+                        elevation: 10
+
+
+            MDBottomNavigationItem:
+                name: 'school'
+                id: nav_icon3
+                icon: "school"
+
+                ScrollView:
+                    pos_hint: {"center_x": .5, "center_y": .400}
+                    MDList:
+                        id: list_two
+
+                BoxLayout:
+                    MDToolbar:
+                        pos_hint: {"center_x": .5, "center_y": .95}
+                        md_bg_color: 243/255, 190/255, 78/255, 255/255
+                        specific_text_color: 1,1,1,1
+                        title: "Students"
+                        use_overflow: True
+                        anchor_title: 'center'
+                        elevation: 10
+
+
+            MDBottomNavigationItem:
+                name: 'driver'
+                id: nav_icon4
+                icon: "account-tie"
+
+                ScrollView:
+                    pos_hint: {"center_x": .5, "center_y": .400}
+                    MDList:
+                        id: list_one
+
+                BoxLayout:
+                    MDToolbar:
+                        pos_hint: {"center_x": .5, "center_y": .95}
+                        md_bg_color: 243/255, 190/255, 78/255, 255/255
+                        specific_text_color: 1,1,1,1
+                        title: "Drivers"
+                        use_overflow: True
+                        anchor_title: 'center'
+                        elevation: 10
+
+            MDBottomNavigationItem:
+                icon: 'menu'
+                name: 'menu'
+                id: nav_icon5
+
+                BoxLayout:
+                    MDToolbar:
+                        pos_hint: {"center_x": .5, "center_y": .95}
+                        md_bg_color: 243/255, 190/255, 78/255, 255/255
+                        specific_text_color: 1,1,1,1
+                        title: "More"
+                        use_overflow: True
+                        anchor_title: 'center'
+                        elevation: 10
+
+                MDIconButton:
+                    icon: "dots-vertical"
+                    pos_hint: {"center_x": .93, "center_y": .95}
+                    user_font_size: "30sp"
+                    use_text_color: "Custom"
+                    text_color: rgba(26, 24, 58, 255)
+                    on_release:
+                        root.manager.transition.direction = "left"
+                        root.manager.current = "_Logout_"
+
+                ScrollView:
+                    pos_hint: {"center_x": .5, "center_y": .400}
+                    MDList:
+                        OneLineAvatarIconListItem:
+                            text: "Add Bus"
+                            on_release:
+                                root.manager.transition.direction = "left"
+                                root.manager.current = "_AddBus_"
+
+                            IconLeftWidget:
+                                icon: "bus"
+
+                        OneLineAvatarIconListItem:
+                            text: "Remove Bus"
+                            on_release:
+                                root.manager.transition.direction = "left"
+                                root.manager.current = "_RemoveBus_"
+                            IconLeftWidget:
+                                icon: "bus"
+
+                        OneLineAvatarIconListItem:
+                            text: "Add Student"
+                            on_release:
+                                root.manager.transition.direction = "left"
+                                root.manager.current = "_AddStudent_"
+                            IconLeftWidget:
+                                icon: "school"
+
+                        OneLineAvatarIconListItem:
+                            text: "Remove Student"
+                            on_release:
+                                root.manager.transition.direction = "left"
+                                root.manager.current = "_Remove_student_"
+                            IconLeftWidget:
+                                icon: "school"
+
+                        OneLineAvatarIconListItem:
+                            text: "Add Driver"
+                            on_release:
+                                root.manager.transition.direction = "left"
+                                root.manager.current = "_AddDriver_"
+                            IconLeftWidget:
+                                icon: "account-tie"
+
+                        OneLineAvatarIconListItem:
+                            text: "Remove Driver"
+                            on_release:
+                                root.manager.transition.direction = "left"
+                                root.manager.current = "_Remove_"
+                            IconLeftWidget:
+                                icon: "account-tie"
+
+<AddStudent>:
+    name: "_AddStudent_"
+    MDIconButton:
+        icon: "arrow-left"
+        pos_hint: {"center_y": .95}
+        user_font_size: "30sp"
+        use_text_color: "Custom"
+        text_color: rgba(26, 24, 58, 255)
+        on_release:
+            root.manager.transition.direction = "right"
+            root.manager.current = "_AHomeScreen_"
+
+    MDLabel:
+        text: "Add new Student account"
+        font_size: "15sp"
+        pos_hint: {"center_x": .6, "center_y": .90}
+        color: rgba(135, 133, 193, 255)
+        use_overflow: True
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .82}
+        use_overflow: True
+        TextInput:
+            id: stud_name
+            hint_text: "Name*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+            use_overflow: True
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+            use_overflow: True
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .70}
+        use_overflow: True
+        TextInput:
+            id: enroll_no
+            hint_text: "Roll No.*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+            use_overflow: True
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+            use_overflow: True
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .58}
+        use_overflow: True
+        TextInput:
+            id: s_add
+            hint_text: "Address*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+            use_overflow: True
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+            use_overflow: True
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .46}
+        use_overflow: True
+        TextInput:
+            id: user_d
+            hint_text: "Driver Username*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+            use_overflow: True
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+            use_overflow: True
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .34}
+        use_overflow: True
+        TextInput:
+            id: p_user
+            hint_text: "Parent Username*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+            use_overflow: True
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+            use_overflow: True
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .22}
+        use_overflow: True
+        TextInput:
+            id: class1
+            hint_text: "Class*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+            use_overflow: True
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+            use_overflow: True
+    Button:
+        text: "CREATE"
+        size_hint: .66, .065
+        pos_hint: {"center_x": .5, "center_y": .10}
+        background_color: 0, 0, 0, 0
+        use_overflow: True
+        on_press:
+            root.add_student(stud_name.text, enroll_no.text, p_user.text,s_add.text,user_d.text,class1.text)
+
+        canvas.before:
+            Color:
+                rgb: rgba(255, 165, 0, 0.4)
+
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius:[5]
+
+
+<Remove_student>:
+    name: "_Remove_student_"
+    MDIconButton:
+        icon: "arrow-left"
+        pos_hint: {"center_y": .95}
+        user_font_size: "30sp"
+        use_text_color: "Custom"
+        text_color: rgba(26, 24, 58, 255)
+        on_release:
+            root.manager.transition.direction = "right"
+            root.manager.current = "_AHomeScreen_"
+
+    MDLabel:
+        text: "Remove Student account"
+        font_size: "15sp"
+        pos_hint: {"center_x": .6, "center_y": .90}
+        color: rgba(135, 133, 193, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .82}
+        TextInput:
+            id: stud_name
+            hint_text: "Student Name"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .70}
+        TextInput:
+            id: enroll_no1
+            hint_text: "Student Roll No.*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .58}
+        TextInput:
+            id: bus_no
+            hint_text: "Student Bus Number"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .46}
+        TextInput:
+            id: class1
+            hint_text: "Student Class*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    Button:
+        text: "REMOVE"
+        size_hint: .66, .065
+        pos_hint: {"center_x": .5, "center_y": .34}
+        background_color: 0, 0, 0, 0
+        on_release: root.remove_s(enroll_no1.text)
+
+        canvas.before:
+            Color:
+                rgb: rgba(255, 165, 0, 0.4)
+
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius:[5]
+
+<AddDriver>:
+    name: "_AddDriver_"
+    MDIconButton:
+        icon: "arrow-left"
+        pos_hint: {"center_y": .95}
+        user_font_size: "30sp"
+        use_text_color: "Custom"
+        text_color: rgba(26, 24, 58, 255)
+        on_release:
+            root.manager.transition.direction = "right"
+            root.manager.current = "_AHomeScreen_"
+
+    MDLabel:
+        text: "Add new Driver account"
+        font_size: "15sp"
+        pos_hint: {"center_x": .6, "center_y": .90}
+        color: rgba(135, 133, 193, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .82}
+        TextInput:
+            id: d_name
+            hint_text: "Name*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .70}
+        TextInput:
+            id: driver_id
+            hint_text: "Driver ID*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .58}
+        TextInput:
+            id: user_d
+            hint_text: "Username*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .46}
+        TextInput:
+            id: pass_d
+            hint_text: "Password*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+            password: True
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .34}
+        TextInput:
+            id: bus_no
+            hint_text: "Bus Number*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+
+    Button:
+        id: create
+        text: "CREATE"
+        size_hint: .66, .065
+        pos_hint: {"center_x": .5, "center_y": .22}
+        background_color: 0, 0, 0, 0
+        on_press:
+            root.add_driver(d_name.text, user_d.text, bus_no.text,pass_d.text,driver_id.text)
+
+        canvas.before:
+            Color:
+                rgb: rgba(255, 165, 0, 0.4)
+
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius:[5]
+
+
+<Remove>:
+    name: "_Remove_"
+    MDIconButton:
+        icon: "arrow-left"
+        pos_hint: {"center_y": .95}
+        user_font_size: "30sp"
+        use_text_color: "Custom"
+        text_color: rgba(26, 24, 58, 255)
+        on_release:
+            root.manager.transition.direction = "right"
+            root.manager.current = "_AHomeScreen_"
+
+    MDLabel:
+        text: "Remove Driver account"
+        font_size: "15sp"
+        pos_hint: {"center_x": .6, "center_y": .90}
+        color: rgba(135, 133, 193, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .82}
+        TextInput:
+            id: driver_name
+            hint_text: "Driver Name"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .70}
+        TextInput:
+            id: driver_id_1
+            hint_text: "Driver ID*"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .58}
+        TextInput:
+            id: driver_pass
+            hint_text: "Driver Password"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+            password: True
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    MDFloatLayout:
+        size_hint: .7, .08
+        pos_hint: {"center_x": .5, "center_y": .46}
+        TextInput:
+            id: bus_no
+            hint_text: "Bus Number"
+            size_hint_y: .75
+            pos_hint: {"center_x": .45, "center_y": .5}
+            background_color: 1, 1, 1, 0
+            foreground_color: rgba(0, 0, 59, 255)
+            font_size: "14sp"
+            cursor_width: "2sp"
+            multiline: False
+        MDFloatLayout:
+            pos_hint: {"center_x": .45, "center_y": 0}
+            size_hint_y: .03
+            md_bg_color: rgba(178, 178, 178, 255)
+
+    Button:
+        text: "REMOVE"
+        size_hint: .66, .065
+        pos_hint: {"center_x": .5, "center_y": .30}
+        background_color: 0, 0, 0, 0
+        on_release:
+            on_release: root.remove(driver_id_1.text)
+
+        canvas.before:
+            Color:
+                rgb: rgba(255, 165, 0, 0.4)
+
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius:[5]
+

@@ -1,0 +1,24 @@
+#:import MapView kivy_garden.mapview.MapView
+<DriversMapView2>:
+
+    name:"_DriversMapView2_"
+
+    lat: 19.87
+    lon: 75.34
+    zoom: 10
+    on_zoom:
+        self.zoom = 10 if self.zoom < 10 else self.zoom
+    on_lat:
+        self.start_getting_markets_in_fov()
+    on_lon:
+        self.start_getting_markets_in_fov()
+
+    MDIconButton:
+        icon: "arrow-left"
+        pos_hint: {"center_y": .95}
+        user_font_size: "30sp"
+        use_text_color: "Custom"
+        text_color: rgba(26, 24, 58, 255)
+        on_release:
+            root.manager.transition.direction = "right"
+            root.manager.current = "_PHomeScreen_"

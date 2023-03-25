@@ -1,0 +1,37 @@
+<Profile>:
+    name: "_Profile_"
+    MDIconButton:
+        icon: "arrow-left"
+        pos_hint: {"center_y": .95}
+        user_font_size: "30sp"
+        use_text_color: "Custom"
+        text_color: rgba(26, 24, 58, 255)
+        on_release:
+            root.manager.transition.direction = "right"
+            root.manager.current = "_AHomeScreen_"
+
+    Image:
+        source:"Images/d2.png"
+        size_hint: 1, 5
+        pos_hint: {"center_x": .5,"center_y": .65}
+
+    MDLabel:
+        text: "Admin Name :      Admin"
+        font_size: "16sp"
+        pos_hint: {"center_x": .50, "center_y": .30}
+        halign: "center"
+        color: rgba(34, 34, 34, 255)
+
+    MDLabel:
+        text: "Username :      pratiksha"
+        font_size: "16sp"
+        pos_hint: {"center_x": .50, "center_y": .23}
+        halign: "center"
+        color: rgba(34, 34, 34, 255)
+
+    MDLabel:
+        text: "Contact Number :      9322238526"
+        font_size: "16sp"
+        pos_hint: {"center_x": .50, "center_y": .15}
+        halign: "center"
+        color: rgba(34, 34, 34, 255)

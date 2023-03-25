@@ -1,0 +1,86 @@
+<My>:
+    name: "My"
+    MDScreen:
+        MDFloatLayout:
+            md_bg_color: 1, 1, 1, 1
+            MDIconButton:
+                icon: "arrow-left"
+                pos_hint: {"center_y": .95}
+                user_font_size: "30sp"
+                use_text_color: "Custom"
+                text_color: rgba(26, 24, 58, 255)
+
+                on_release:
+                    root.manager.transition.direction = "right"
+                    root.manager.current= "_FirstScreen_"
+
+            Image:
+                source:"Images/logofa.jpg"
+                size_hint: 1, 8
+                pos_hint: {"center_x": .5,"center_y": .65}
+
+            MDLabel:
+                text: "W E L C O M E !"
+                font_size: "19sp"
+                pos_hint: {"center_y": .40}
+                halign: "center"
+                color: rgba(34, 34, 34, 255)
+
+
+            Button:
+                text: "Admin"
+                size_hint: .66, .065
+                pos_hint: {"center_x": .5, "center_y": .32}
+                background_color: 0, 0, 0, 0
+
+                on_release:
+                    root.manager.transition.direction = "left"
+                    root.manager.current = "_AdminWelcome_"
+
+                canvas.before:
+                    Color:
+                        rgb: rgba(255, 165, 0, 0.4)
+
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius:[5]
+
+
+            Button:
+                text: "Driver"
+                size_hint: .66, .065
+                pos_hint: {"center_x": .5, "center_y": .23}
+                background_color: 0, 0, 0, 0
+
+                on_release:
+                    root.manager.transition.direction = "left"
+                    root.manager.current = "_DriverWelcome_"
+
+                canvas.before:
+                    Color:
+                        rgb: rgba(255, 165, 0, 0.4)
+
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius:[5]
+
+            Button:
+                text: "Parent"
+                size_hint: .66, .065
+                pos_hint: {"center_x": .5, "center_y": .14}
+                background_color: 0, 0, 0, 0
+
+                on_release:
+                    root.manager.transition.direction = "left"
+                    root.manager.current = "_ParentWelcome_"
+
+                canvas.before:
+                    Color:
+                        rgb: rgba(255, 165, 0, 0.4)
+
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                        radius:[5]

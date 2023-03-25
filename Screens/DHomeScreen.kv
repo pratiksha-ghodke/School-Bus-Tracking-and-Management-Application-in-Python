@@ -1,0 +1,176 @@
+#:import MapView kivy_garden.mapview.MapView
+
+<ListItemWithCheckbox4>:
+    IconLeftWidget:
+        icon: "school"
+
+    RightCheckbox:
+        on_active:
+            root.on_checkbox_active()
+
+
+<DHomeScreen>:
+    name:"_DHomeScreen_"
+    BoxLayout:
+        orientation:'vertical'
+
+        MDBottomNavigation:
+            panel_color: 1, 1, 1, 1
+            text_color_normal: 0, 0, 0 , .5
+            text_color_active: 243/255, 190/255, 78/255, 255/255
+
+            MDBottomNavigationItem:
+                name: 'home'
+                id: nav_icon1
+                icon: "home"
+                Image:
+                    source:"Images/map.png"
+                    size_hint: 1, 8
+                    pos_hint: {"center_x": .5,"center_y": .65}
+
+                BoxLayout:
+                    MDToolbar:
+                        pos_hint: {"center_x": .5, "center_y": .95}
+                        md_bg_color: 243/255, 190/255, 78/255, 255/255
+                        specific_text_color: 1,1,1,1
+                        title: "Home"
+                        use_overflow: True
+                        anchor_title: 'center'
+                        elevation: 10
+
+                MDFloatLayout:
+                    MDCard:
+                        md_bg_color: 1, 1, 1, 1
+                        elevation: 7
+                        size_hint: .8, .2
+                        pos_hint:{"center_x": .50,"center_y":.32}
+                        radius: [10]
+                        MDLabel:
+                            text: "School Location"
+                            font_size: "23sp"
+                            pos_hint: {"center_y": .5}
+                            halign: "center"
+                            color: rgba(34, 34, 34, 255)
+
+                        MDLabel:
+                            text: "ABCD School , N6 CIDCO, Aurangabad"
+                            font_size: "15sp"
+                            pos_hint: {"center_y": .5}
+                            color: rgba(34, 34, 34, 255)
+
+                MDFloatLayout:
+                    MDCard:
+                        md_bg_color: 1, 1, 1, 1
+                        elevation: 7
+                        size_hint: .8, .2
+                        pos_hint:{"center_x": .50,"center_y":.10}
+                        radius: [10]
+                        MDLabel:
+                            text: "School Address"
+                            font_size: "23sp"
+                            pos_hint: {"center_y": .5}
+                            halign: "center"
+                            color: rgba(34, 34, 34, 255)
+
+                        MDLabel:
+                            text: "Jalna Road, Aurangabad"
+                            font_size: "15sp"
+                            pos_hint: {"center_y": .5}
+                            color: rgba(34, 34, 34, 255)
+
+
+
+            MDBottomNavigationItem:
+                name: 'attendance'
+                id: nav_icon2
+                icon: "school"
+
+                ScrollView:
+                    pos_hint: {"center_x": .5, "center_y": .400}
+                    MDList:
+                        id: list_two1
+
+                BoxLayout:
+                    MDToolbar:
+                        pos_hint: {"center_x": .5, "center_y": .95}
+                        md_bg_color: 243/255, 190/255, 78/255, 255/255
+                        specific_text_color: 1,1,1,1
+                        title: "Attendance"
+                        use_overflow: True
+                        anchor_title: 'center'
+                        elevation: 10
+
+
+            MDBottomNavigationItem:
+                name: 'track'
+                id: nav_icon3
+                icon: "google-maps"
+                Image:
+                    source:"Images/location.png"
+                    size_hint: 1, 8
+                    pos_hint: {"center_x": .5,"center_y": .65}
+                Button:
+                    text: "TRACK"
+                    size_hint: .66, .065
+                    pos_hint: {"center_x": .5, "center_y": .20}
+                    background_color: 0, 0, 0, 0
+                    use_overflow: True
+                    canvas.before:
+                        Color:
+                            rgb: rgba(255, 165, 0, 0.4)
+
+                        RoundedRectangle:
+                            size: self.size
+                            pos: self.pos
+                            radius:[5]
+                    on_press:
+                        root.manager.current = "_DriversMapView_"
+
+            MDBottomNavigationItem:
+                name: 'profile'
+                id: nav_icon4
+                icon: "account"
+                on_tab_press:
+                    root.profile()
+                Image:
+                    source:"Images/driver.png"
+                    size_hint: 1, 3
+                    pos_hint: {"center_x": .5,"center_y": .65}
+
+                MDBoxLayout:
+                    id: box
+                    pos_hint: {"center_x": .5,"center_y": .33}
+                    orientation: "vertical"
+
+                MDBoxLayout:
+                    id: box2
+                    pos_hint: {"center_x": .5,"center_y": .27}
+                    orientation: "vertical"
+
+                BoxLayout:
+                    MDToolbar:
+                        pos_hint: {"center_x": .5, "center_y": .95}
+                        md_bg_color: 243/255, 190/255, 78/255, 255/255
+                        specific_text_color: 1,1,1,1
+                        title: "Profile"
+                        use_overflow: True
+                        anchor_title: 'center'
+                        elevation: 10
+
+
+                Button:
+                    text: "LOGOUT"
+                    size_hint: .66, .065
+                    pos_hint: {"center_x": .5,"center_y": .15}
+                    background_color: 0, 0, 0, 0
+                    canvas.before:
+                        Color:
+                            rgb: rgba(243,190,78,255)
+                        RoundedRectangle:
+                            size: self.size
+                            pos: self.pos
+
+                    on_release:
+                        root.manager.transition.direction = "left"
+                        root.manager.current = "Screen1"
+
